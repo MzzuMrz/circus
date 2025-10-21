@@ -1,0 +1,1312 @@
+/**
+ * Circus Finance - SEGA Minimalist Menu
+ *
+ * Clean. Simple. Fits on screen. No scrolling.
+ */
+
+/* ==================== MAIN CONTAINER ==================== */
+
+.sega-menu {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.sega-menu:focus {
+  outline: none;
+}
+
+/* ==================== BACKGROUND ==================== */
+
+.sky-gradient {
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  z-index: 1;
+}
+
+/* ==================== PIXEL ART ANIMATIONS ==================== */
+
+.pixel-animations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ==================== CIRCUS CHARLIE SCENE - SIDES ONLY ==================== */
+
+.circus-charlie-scene-full {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Platform - Full Width */
+.circus-platform-full {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #8B4513;
+  box-shadow: 0 4px 0 #654321;
+  opacity: 0.4;
+}
+
+.circus-platform-full::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #654321 0px,
+    #654321 8px,
+    #8B4513 8px,
+    #8B4513 16px
+  );
+}
+
+/* Fire Hoops - Left and Right Only */
+.fire-hoop {
+  position: absolute;
+  bottom: 35px;
+  width: 60px;
+  height: 60px;
+  image-rendering: pixelated;
+  opacity: 0.5;
+}
+
+.hoop-left { left: 8%; }
+.hoop-right { right: 8%; }
+
+/* ==================== ELEGANT CLOWN RIDER ==================== */
+
+.clown-bike {
+  position: absolute;
+  bottom: 53px;
+  width: 90px;
+  height: 90px;
+  image-rendering: pixelated;
+  z-index: 2;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  animation: elegantRide 18s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+@keyframes elegantRide {
+  0% {
+    left: -12%;
+    transform: translateY(0);
+  }
+  45% {
+    left: 50%;
+    transform: translateY(-8px);
+  }
+  50% {
+    left: 55%;
+    transform: translateY(0);
+  }
+  100% {
+    left: 112%;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CLOWN #1: RED RACER (Rainbow Afro) ===== */
+.clown-sprite-red {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== BIKE - BACK WHEEL ===== */
+    8px 52px 0 #333333, 12px 52px 0 #333333, 16px 52px 0 #333333, 20px 52px 0 #333333,
+    4px 56px 0 #333333, 8px 56px 0 #000000, 12px 56px 0 #666666, 16px 56px 0 #666666, 20px 56px 0 #000000, 24px 56px 0 #333333,
+    4px 60px 0 #333333, 8px 60px 0 #666666, 20px 60px 0 #666666, 24px 60px 0 #333333,
+    4px 64px 0 #333333, 8px 64px 0 #000000, 12px 64px 0 #666666, 16px 64px 0 #666666, 20px 64px 0 #000000, 24px 64px 0 #333333,
+    8px 68px 0 #333333, 12px 68px 0 #333333, 16px 68px 0 #333333, 20px 68px 0 #333333,
+
+    /* ===== BIKE - FRONT WHEEL ===== */
+    48px 52px 0 #333333, 52px 52px 0 #333333, 56px 52px 0 #333333, 60px 52px 0 #333333,
+    44px 56px 0 #333333, 48px 56px 0 #000000, 52px 56px 0 #666666, 56px 56px 0 #666666, 60px 56px 0 #000000, 64px 56px 0 #333333,
+    44px 60px 0 #333333, 48px 60px 0 #666666, 60px 60px 0 #666666, 64px 60px 0 #333333,
+    44px 64px 0 #333333, 48px 64px 0 #000000, 52px 64px 0 #666666, 56px 64px 0 #666666, 60px 64px 0 #000000, 64px 64px 0 #333333,
+    48px 68px 0 #333333, 52px 68px 0 #333333, 56px 68px 0 #333333, 60px 68px 0 #333333,
+
+    /* ===== BIKE - FRAME ===== */
+    20px 44px 0 #CC0000, 24px 44px 0 #CC0000,
+    16px 48px 0 #CC0000, 20px 48px 0 #FF0000, 24px 48px 0 #FF0000, 28px 48px 0 #CC0000, 32px 48px 0 #CC0000,
+    16px 52px 0 #CC0000, 20px 52px 0 #FF0000, 24px 52px 0 #FF0000, 28px 52px 0 #FF0000, 32px 52px 0 #FF0000, 36px 52px 0 #CC0000, 40px 52px 0 #CC0000, 44px 52px 0 #CC0000,
+    20px 56px 0 #CC0000, 24px 56px 0 #FF0000, 28px 56px 0 #FF0000, 32px 56px 0 #FF0000, 36px 56px 0 #FF0000, 40px 56px 0 #CC0000, 44px 56px 0 #CC0000,
+    /* Handlebars */
+    40px 44px 0 #666666, 44px 44px 0 #666666, 48px 44px 0 #666666,
+    44px 48px 0 #666666, 48px 48px 0 #666666,
+
+    /* ===== CLOWN WIG (Multi-colored, fluffy) ===== */
+    20px 4px 0 #FF6B00, 24px 4px 0 #FF0000, 28px 4px 0 #FFFF00, 32px 4px 0 #FF00FF,
+    16px 8px 0 #FFFF00, 20px 8px 0 #FF0000, 24px 8px 0 #FF6B00, 28px 8px 0 #FF0000, 32px 8px 0 #FFFF00, 36px 8px 0 #FF00FF,
+    12px 12px 0 #FF00FF, 16px 12px 0 #FF0000, 20px 12px 0 #FFFF00, 24px 12px 0 #FF6B00, 28px 12px 0 #FF0000, 32px 12px 0 #FFFF00, 36px 12px 0 #FF00FF, 40px 12px 0 #FF6B00,
+
+    /* ===== CLOWN FACE ===== */
+    16px 16px 0 #FFC0CB, 20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4, 36px 16px 0 #FFC0CB,
+    16px 20px 0 #FFC0CB, 20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000, 36px 20px 0 #FFC0CB,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FF0000, 32px 24px 0 #FFE4C4, 36px 24px 0 #FFE4C4,
+    20px 28px 0 #FFE4C4, 24px 28px 0 #FF0000, 28px 28px 0 #FF0000, 32px 28px 0 #FF0000, 36px 28px 0 #FFE4C4,
+
+    /* ===== RUFFLED COLLAR ===== */
+    16px 32px 0 #FFFFFF, 20px 32px 0 #FFFF00, 24px 32px 0 #FFFFFF, 28px 32px 0 #FFFF00, 32px 32px 0 #FFFFFF, 36px 32px 0 #FFFF00,
+
+    /* ===== CLOWN BODY (Polka dot outfit) ===== */
+    20px 36px 0 #0066FF, 24px 36px 0 #FFFF00, 28px 36px 0 #0066FF, 32px 36px 0 #0066FF,
+    20px 40px 0 #0066FF, 24px 40px 0 #0066FF, 28px 40px 0 #FFFF00, 32px 40px 0 #0066FF,
+    20px 44px 0 #0066FF, 24px 44px 0 #0066FF, 28px 44px 0 #0066FF, 32px 44px 0 #FFFF00,
+    24px 48px 0 #0066FF, 28px 48px 0 #0066FF,
+
+    /* ===== BOW TIE ===== */
+    20px 32px 0 #FF0000, 24px 32px 0 #FF0000, 28px 32px 0 #FF0000, 32px 32px 0 #FF0000,
+
+    /* ===== CLOWN ARMS ===== */
+    16px 36px 0 #FFE4C4, 36px 36px 0 #FFE4C4,
+    12px 40px 0 #FFE4C4, 16px 40px 0 #0066FF, 36px 40px 0 #0066FF, 40px 40px 0 #FFE4C4,
+    8px 44px 0 #FFE4C4, 12px 44px 0 #0066FF, 40px 44px 0 #0066FF, 44px 44px 0 #FFE4C4,
+
+    /* ===== CLOWN LEGS ===== */
+    24px 52px 0 #000000, 28px 52px 0 #000000,
+    24px 56px 0 #000000, 28px 56px 0 #000000,
+
+    /* ===== BIG CLOWN SHOES ===== */
+    20px 60px 0 #FFFF00, 24px 60px 0 #FFFF00, 28px 60px 0 #FFFF00, 32px 60px 0 #FFFF00,
+    20px 64px 0 #FFFF00, 24px 64px 0 #000000, 28px 64px 0 #000000, 32px 64px 0 #FFFF00,
+    16px 64px 0 #FFFF00, 36px 64px 0 #FFFF00;
+
+  animation: clownBobbing 0.5s steps(2) infinite;
+}
+
+/* ===== CLOWN #2: BLUE RACER (Green Mohawk + Striped Outfit) ===== */
+.clown-sprite-blue {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== BIKE - BACK WHEEL (Purple) ===== */
+    8px 52px 0 #663399, 12px 52px 0 #663399, 16px 52px 0 #663399, 20px 52px 0 #663399,
+    4px 56px 0 #663399, 8px 56px 0 #000000, 12px 56px 0 #9966CC, 16px 56px 0 #9966CC, 20px 56px 0 #000000, 24px 56px 0 #663399,
+    4px 60px 0 #663399, 8px 60px 0 #9966CC, 20px 60px 0 #9966CC, 24px 60px 0 #663399,
+    4px 64px 0 #663399, 8px 64px 0 #000000, 12px 64px 0 #9966CC, 16px 64px 0 #9966CC, 20px 64px 0 #000000, 24px 64px 0 #663399,
+    8px 68px 0 #663399, 12px 68px 0 #663399, 16px 68px 0 #663399, 20px 68px 0 #663399,
+
+    /* ===== BIKE - FRONT WHEEL (Purple) ===== */
+    48px 52px 0 #663399, 52px 52px 0 #663399, 56px 52px 0 #663399, 60px 52px 0 #663399,
+    44px 56px 0 #663399, 48px 56px 0 #000000, 52px 56px 0 #9966CC, 56px 56px 0 #9966CC, 60px 56px 0 #000000, 64px 56px 0 #663399,
+    44px 60px 0 #663399, 48px 60px 0 #9966CC, 60px 60px 0 #9966CC, 64px 60px 0 #663399,
+    44px 64px 0 #663399, 48px 64px 0 #000000, 52px 64px 0 #9966CC, 56px 64px 0 #9966CC, 60px 64px 0 #000000, 64px 64px 0 #663399,
+    48px 68px 0 #663399, 52px 68px 0 #663399, 56px 68px 0 #663399, 60px 68px 0 #663399,
+
+    /* ===== BIKE FRAME (Neon Green) ===== */
+    20px 44px 0 #00CC00, 24px 44px 0 #00CC00,
+    16px 48px 0 #00CC00, 20px 48px 0 #00FF00, 24px 48px 0 #00FF00, 28px 48px 0 #00CC00, 32px 48px 0 #00CC00,
+    16px 52px 0 #00CC00, 20px 52px 0 #00FF00, 24px 52px 0 #00FF00, 28px 52px 0 #00FF00, 32px 52px 0 #00FF00, 36px 52px 0 #00CC00, 40px 52px 0 #00CC00, 44px 52px 0 #00CC00,
+    20px 56px 0 #00CC00, 24px 56px 0 #00FF00, 28px 56px 0 #00FF00, 32px 56px 0 #00FF00, 36px 56px 0 #00FF00, 40px 56px 0 #00CC00, 44px 56px 0 #00CC00,
+    40px 44px 0 #999999, 44px 44px 0 #999999, 48px 44px 0 #999999,
+    44px 48px 0 #999999, 48px 48px 0 #999999,
+
+    /* ===== GREEN MOHAWK ===== */
+    24px 0 0 #00FF00, 28px 0 0 #00FF00,
+    20px 4px 0 #00FF00, 24px 4px 0 #00CC00, 28px 4px 0 #00CC00, 32px 4px 0 #00FF00,
+    20px 8px 0 #00CC00, 24px 8px 0 #00FF00, 28px 8px 0 #00FF00, 32px 8px 0 #00CC00,
+    16px 12px 0 #00CC00, 20px 12px 0 #00FF00, 24px 12px 0 #00CC00, 28px 12px 0 #00FF00, 32px 12px 0 #00CC00, 36px 12px 0 #00CC00,
+
+    /* ===== BLUE FACE + SUNGLASSES ===== */
+    16px 16px 0 #FFC0CB, 20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4, 36px 16px 0 #FFC0CB,
+    16px 20px 0 #FFC0CB, 20px 20px 0 #000000, 24px 20px 0 #000000, 28px 20px 0 #000000, 32px 20px 0 #000000, 36px 20px 0 #FFC0CB,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #0066FF, 32px 24px 0 #FFE4C4, 36px 24px 0 #FFE4C4,
+    20px 28px 0 #FFE4C4, 24px 28px 0 #0066FF, 28px 28px 0 #0066FF, 32px 28px 0 #0066FF, 36px 28px 0 #FFE4C4,
+
+    /* ===== STRIPED COLLAR ===== */
+    16px 32px 0 #00FFFF, 20px 32px 0 #FF00FF, 24px 32px 0 #00FFFF, 28px 32px 0 #FF00FF, 32px 32px 0 #00FFFF, 36px 32px 0 #FF00FF,
+
+    /* ===== BLUE BODY (Vertical Stripes) ===== */
+    20px 36px 0 #0066FF, 24px 36px 0 #FFFFFF, 28px 36px 0 #0066FF, 32px 36px 0 #FFFFFF,
+    20px 40px 0 #0066FF, 24px 40px 0 #FFFFFF, 28px 40px 0 #0066FF, 32px 40px 0 #FFFFFF,
+    20px 44px 0 #0066FF, 24px 44px 0 #FFFFFF, 28px 44px 0 #0066FF, 32px 44px 0 #FFFFFF,
+    24px 48px 0 #0066FF, 28px 48px 0 #0066FF,
+
+    /* ===== BLUE BOW TIE ===== */
+    20px 32px 0 #0066FF, 24px 32px 0 #0066FF, 28px 32px 0 #0066FF, 32px 32px 0 #0066FF,
+
+    /* ===== ARMS ===== */
+    16px 36px 0 #FFE4C4, 36px 36px 0 #FFE4C4,
+    12px 40px 0 #FFE4C4, 16px 40px 0 #0066FF, 36px 40px 0 #0066FF, 40px 40px 0 #FFE4C4,
+    8px 44px 0 #FFE4C4, 12px 44px 0 #0066FF, 40px 44px 0 #0066FF, 44px 44px 0 #FFE4C4,
+
+    /* ===== LEGS ===== */
+    24px 52px 0 #000000, 28px 52px 0 #000000,
+    24px 56px 0 #000000, 28px 56px 0 #000000,
+
+    /* ===== ORANGE SHOES ===== */
+    20px 60px 0 #FF6600, 24px 60px 0 #FF6600, 28px 60px 0 #FF6600, 32px 60px 0 #FF6600,
+    20px 64px 0 #FF6600, 24px 64px 0 #000000, 28px 64px 0 #000000, 32px 64px 0 #FF6600,
+    16px 64px 0 #FF6600, 36px 64px 0 #FF6600;
+
+  animation: clownBobbing 0.6s steps(2) infinite;
+}
+
+/* ===== CLOWN #3: GREEN RACER (Orange Curls + Hearts) ===== */
+.clown-sprite-green {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== BIKE - BACK WHEEL (Gold) ===== */
+    8px 52px 0 #CC9900, 12px 52px 0 #CC9900, 16px 52px 0 #CC9900, 20px 52px 0 #CC9900,
+    4px 56px 0 #CC9900, 8px 56px 0 #000000, 12px 56px 0 #FFD700, 16px 56px 0 #FFD700, 20px 56px 0 #000000, 24px 56px 0 #CC9900,
+    4px 60px 0 #CC9900, 8px 60px 0 #FFD700, 20px 60px 0 #FFD700, 24px 60px 0 #CC9900,
+    4px 64px 0 #CC9900, 8px 64px 0 #000000, 12px 64px 0 #FFD700, 16px 64px 0 #FFD700, 20px 64px 0 #000000, 24px 64px 0 #CC9900,
+    8px 68px 0 #CC9900, 12px 68px 0 #CC9900, 16px 68px 0 #CC9900, 20px 68px 0 #CC9900,
+
+    /* ===== BIKE - FRONT WHEEL (Gold) ===== */
+    48px 52px 0 #CC9900, 52px 52px 0 #CC9900, 56px 52px 0 #CC9900, 60px 52px 0 #CC9900,
+    44px 56px 0 #CC9900, 48px 56px 0 #000000, 52px 56px 0 #FFD700, 56px 56px 0 #FFD700, 60px 56px 0 #000000, 64px 56px 0 #CC9900,
+    44px 60px 0 #CC9900, 48px 60px 0 #FFD700, 60px 60px 0 #FFD700, 64px 60px 0 #CC9900,
+    44px 64px 0 #CC9900, 48px 64px 0 #000000, 52px 64px 0 #FFD700, 56px 64px 0 #FFD700, 60px 64px 0 #000000, 64px 64px 0 #CC9900,
+    48px 68px 0 #CC9900, 52px 68px 0 #CC9900, 56px 68px 0 #CC9900, 60px 68px 0 #CC9900,
+
+    /* ===== BIKE FRAME (Hot Pink) ===== */
+    20px 44px 0 #CC0066, 24px 44px 0 #CC0066,
+    16px 48px 0 #CC0066, 20px 48px 0 #FF0099, 24px 48px 0 #FF0099, 28px 48px 0 #CC0066, 32px 48px 0 #CC0066,
+    16px 52px 0 #CC0066, 20px 52px 0 #FF0099, 24px 52px 0 #FF0099, 28px 52px 0 #FF0099, 32px 52px 0 #FF0099, 36px 52px 0 #CC0066, 40px 52px 0 #CC0066, 44px 52px 0 #CC0066,
+    20px 56px 0 #CC0066, 24px 56px 0 #FF0099, 28px 56px 0 #FF0099, 32px 56px 0 #FF0099, 36px 56px 0 #FF0099, 40px 56px 0 #CC0066, 44px 56px 0 #CC0066,
+    40px 44px 0 #CCCCCC, 44px 44px 0 #CCCCCC, 48px 44px 0 #CCCCCC,
+    44px 48px 0 #CCCCCC, 48px 48px 0 #CCCCCC,
+
+    /* ===== ORANGE CURLY HAIR ===== */
+    16px 4px 0 #FF6600, 20px 4px 0 #FF8800, 28px 4px 0 #FF8800, 32px 4px 0 #FF6600,
+    12px 8px 0 #FF6600, 16px 8px 0 #FF8800, 20px 8px 0 #FFAA00, 24px 8px 0 #FF8800, 28px 8px 0 #FFAA00, 32px 8px 0 #FF8800, 36px 8px 0 #FF6600,
+    12px 12px 0 #FF8800, 16px 12px 0 #FFAA00, 20px 12px 0 #FF8800, 24px 12px 0 #FFAA00, 28px 12px 0 #FF8800, 32px 12px 0 #FFAA00, 36px 12px 0 #FF8800, 40px 12px 0 #FF6600,
+
+    /* ===== GREEN FACE + BIG SMILE ===== */
+    16px 16px 0 #FFC0CB, 20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4, 36px 16px 0 #FFC0CB,
+    16px 20px 0 #FFC0CB, 20px 20px 0 #000000, 24px 20px 0 #FFE4C4, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000, 36px 20px 0 #FFC0CB,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #00FF00, 32px 24px 0 #FFE4C4, 36px 24px 0 #FFE4C4,
+    20px 28px 0 #00FF00, 24px 28px 0 #00FF00, 28px 28px 0 #00FF00, 32px 28px 0 #00FF00, 36px 28px 0 #00FF00,
+
+    /* ===== HEART COLLAR ===== */
+    16px 32px 0 #FF0000, 20px 32px 0 #FFFFFF, 24px 32px 0 #FF0000, 28px 32px 0 #FFFFFF, 32px 32px 0 #FF0000, 36px 32px 0 #FFFFFF,
+
+    /* ===== GREEN BODY (Heart Pattern) ===== */
+    20px 36px 0 #00CC66, 24px 36px 0 #FF00FF, 28px 36px 0 #00CC66, 32px 36px 0 #00CC66,
+    20px 40px 0 #00CC66, 24px 40px 0 #00CC66, 28px 40px 0 #FF00FF, 32px 40px 0 #00CC66,
+    20px 44px 0 #00CC66, 24px 44px 0 #00CC66, 28px 44px 0 #00CC66, 32px 44px 0 #FF00FF,
+    24px 48px 0 #00CC66, 28px 48px 0 #00CC66,
+
+    /* ===== GREEN BOW TIE ===== */
+    20px 32px 0 #00FF00, 24px 32px 0 #00FF00, 28px 32px 0 #00FF00, 32px 32px 0 #00FF00,
+
+    /* ===== ARMS ===== */
+    16px 36px 0 #FFE4C4, 36px 36px 0 #FFE4C4,
+    12px 40px 0 #FFE4C4, 16px 40px 0 #00CC66, 36px 40px 0 #00CC66, 40px 40px 0 #FFE4C4,
+    8px 44px 0 #FFE4C4, 12px 44px 0 #00CC66, 40px 44px 0 #00CC66, 44px 44px 0 #FFE4C4,
+
+    /* ===== LEGS ===== */
+    24px 52px 0 #000000, 28px 52px 0 #000000,
+    24px 56px 0 #000000, 28px 56px 0 #000000,
+
+    /* ===== PURPLE SHOES ===== */
+    20px 60px 0 #9933FF, 24px 60px 0 #9933FF, 28px 60px 0 #9933FF, 32px 60px 0 #9933FF,
+    20px 64px 0 #9933FF, 24px 64px 0 #000000, 28px 64px 0 #000000, 32px 64px 0 #9933FF,
+    16px 64px 0 #9933FF, 36px 64px 0 #9933FF;
+
+  animation: clownBobbing 0.7s steps(2) infinite;
+}
+
+@keyframes clownBobbing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* ==================== NEW CHARACTER ANIMATIONS ==================== */
+
+@keyframes trapezeSway {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-10deg);
+  }
+}
+
+@keyframes contortionBend {
+  0%, 100% {
+    transform: scaleY(1) skewX(0deg);
+  }
+  50% {
+    transform: scaleY(0.9) skewX(8deg);
+  }
+}
+
+@keyframes tamerWhip {
+  0%, 70%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10%, 30% {
+    transform: translateY(-5px) rotate(15deg);
+  }
+}
+
+@keyframes elephantWalk {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes magicianGesture {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+  }
+  30% {
+    transform: translateY(-6px) scaleX(1.05);
+  }
+  60% {
+    transform: translateY(-4px) scaleX(0.98);
+  }
+}
+
+/* ===== JUGGLER (Purple Hat, Teal Vest, Juggling Balls) ===== */
+.juggler-sprite-detailed {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== PURPLE TOP HAT ===== */
+    20px 0 0 #663399, 24px 0 0 #663399, 28px 0 0 #663399, 32px 0 0 #663399,
+    16px 4px 0 #663399, 20px 4px 0 #9966CC, 24px 4px 0 #9966CC, 28px 4px 0 #9966CC, 32px 4px 0 #9966CC, 36px 4px 0 #663399,
+    12px 8px 0 #663399, 16px 8px 0 #663399, 20px 8px 0 #663399, 24px 8px 0 #663399, 28px 8px 0 #663399, 32px 8px 0 #663399, 36px 8px 0 #663399, 40px 8px 0 #663399,
+    12px 12px 0 #663399, 16px 12px 0 #9966CC, 20px 12px 0 #9966CC, 24px 12px 0 #9966CC, 28px 12px 0 #9966CC, 32px 12px 0 #9966CC, 36px 12px 0 #9966CC, 40px 12px 0 #663399,
+
+    /* ===== FACE ===== */
+    20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+    20px 28px 0 #FFE4C4, 24px 28px 0 #FF69B4, 28px 28px 0 #FF69B4, 32px 28px 0 #FFE4C4,
+
+    /* ===== TEAL VEST WITH PATTERN ===== */
+    20px 32px 0 #00CED1, 24px 32px 0 #00CED1, 28px 32px 0 #00CED1, 32px 32px 0 #00CED1,
+    16px 36px 0 #00CED1, 20px 36px 0 #20B2AA, 24px 36px 0 #FFD700, 28px 36px 0 #20B2AA, 32px 36px 0 #20B2AA, 36px 36px 0 #00CED1,
+    16px 40px 0 #00CED1, 20px 40px 0 #20B2AA, 24px 40px 0 #20B2AA, 28px 40px 0 #FFD700, 32px 40px 0 #20B2AA, 36px 40px 0 #00CED1,
+    20px 44px 0 #00CED1, 24px 44px 0 #20B2AA, 28px 44px 0 #20B2AA, 32px 44px 0 #00CED1,
+
+    /* ===== ARMS RAISED (JUGGLING) ===== */
+    8px 24px 0 #FFE4C4, 12px 24px 0 #FFE4C4, 40px 24px 0 #FFE4C4, 44px 24px 0 #FFE4C4,
+    4px 28px 0 #FFE4C4, 8px 28px 0 #00CED1, 12px 28px 0 #00CED1, 40px 28px 0 #00CED1, 44px 28px 0 #00CED1, 48px 28px 0 #FFE4C4,
+    0 32px 0 #FFE4C4, 4px 32px 0 #00CED1, 8px 32px 0 #00CED1, 44px 32px 0 #00CED1, 48px 32px 0 #00CED1, 52px 32px 0 #FFE4C4,
+
+    /* ===== JUGGLING BALLS ===== */
+    0 12px 0 #FF0000, 4px 12px 0 #FF0000, 0 16px 0 #FF0000, 4px 16px 0 #FF0000,
+    48px 8px 0 #00FF00, 52px 8px 0 #00FF00, 48px 12px 0 #00FF00, 52px 12px 0 #00FF00,
+    24px 4px 0 #0066FF, 28px 4px 0 #0066FF, 24px 8px 0 #0066FF, 28px 8px 0 #0066FF,
+
+    /* ===== ORANGE PANTS ===== */
+    20px 48px 0 #FF8800, 24px 48px 0 #FF8800, 28px 48px 0 #FF8800, 32px 48px 0 #FF8800,
+    20px 52px 0 #FF8800, 24px 52px 0 #FF6600, 28px 52px 0 #FF6600, 32px 52px 0 #FF8800,
+    20px 56px 0 #FF8800, 32px 56px 0 #FF8800,
+
+    /* ===== SHOES ===== */
+    20px 60px 0 #000000, 24px 60px 0 #000000, 28px 60px 0 #000000, 32px 60px 0 #000000,
+    20px 64px 0 #000000, 24px 64px 0 #333333, 28px 64px 0 #333333, 32px 64px 0 #000000,
+    16px 64px 0 #000000, 36px 64px 0 #000000;
+
+  animation: walkerBobbing 0.6s steps(2) infinite;
+}
+
+/* ===== RINGMASTER (Tall Hat, Red Coat, Mustache) ===== */
+.ringmaster-sprite-detailed {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== TALL BLACK TOP HAT ===== */
+    20px 0 0 #000000, 24px 0 0 #000000, 28px 0 0 #000000, 32px 0 0 #000000,
+    16px 4px 0 #000000, 20px 4px 0 #333333, 24px 4px 0 #333333, 28px 4px 0 #333333, 32px 4px 0 #333333, 36px 4px 0 #000000,
+    16px 8px 0 #000000, 20px 8px 0 #333333, 24px 8px 0 #333333, 28px 8px 0 #333333, 32px 8px 0 #333333, 36px 8px 0 #000000,
+    12px 12px 0 #000000, 16px 12px 0 #000000, 20px 12px 0 #000000, 24px 12px 0 #000000, 28px 12px 0 #000000, 32px 12px 0 #000000, 36px 12px 0 #000000, 40px 12px 0 #000000,
+    12px 16px 0 #000000, 16px 16px 0 #333333, 20px 16px 0 #333333, 24px 16px 0 #333333, 28px 16px 0 #333333, 32px 16px 0 #333333, 36px 16px 0 #333333, 40px 16px 0 #000000,
+
+    /* ===== FACE ===== */
+    20px 20px 0 #FFE4C4, 24px 20px 0 #FFE4C4, 28px 20px 0 #FFE4C4, 32px 20px 0 #FFE4C4,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #000000, 28px 24px 0 #FFE4C4, 32px 24px 0 #000000,
+    20px 28px 0 #FFE4C4, 24px 28px 0 #FFE4C4, 28px 28px 0 #FFE4C4, 32px 28px 0 #FFE4C4,
+
+    /* ===== BIG MUSTACHE ===== */
+    12px 32px 0 #000000, 16px 32px 0 #000000, 20px 32px 0 #000000, 24px 32px 0 #FFE4C4, 28px 32px 0 #FFE4C4, 32px 32px 0 #000000, 36px 32px 0 #000000, 40px 32px 0 #000000,
+    8px 36px 0 #000000, 12px 36px 0 #000000, 16px 36px 0 #000000, 20px 36px 0 #000000, 32px 36px 0 #000000, 36px 36px 0 #000000, 40px 36px 0 #000000, 44px 36px 0 #000000,
+
+    /* ===== RED COAT WITH GOLD TRIM ===== */
+    16px 40px 0 #CC0000, 20px 40px 0 #CC0000, 24px 40px 0 #FFD700, 28px 40px 0 #FFD700, 32px 40px 0 #CC0000, 36px 40px 0 #CC0000,
+    12px 44px 0 #CC0000, 16px 44px 0 #FF0000, 20px 44px 0 #FF0000, 24px 44px 0 #FF0000, 28px 44px 0 #FF0000, 32px 44px 0 #FF0000, 36px 44px 0 #FF0000, 40px 44px 0 #CC0000,
+    12px 48px 0 #CC0000, 16px 48px 0 #FF0000, 20px 48px 0 #FFD700, 24px 48px 0 #FF0000, 28px 48px 0 #FF0000, 32px 48px 0 #FFD700, 36px 48px 0 #FF0000, 40px 48px 0 #CC0000,
+    12px 52px 0 #CC0000, 16px 52px 0 #FF0000, 20px 52px 0 #FF0000, 24px 52px 0 #FFD700, 28px 52px 0 #FFD700, 32px 52px 0 #FF0000, 36px 52px 0 #FF0000, 40px 52px 0 #CC0000,
+    16px 56px 0 #CC0000, 20px 56px 0 #FF0000, 24px 56px 0 #FF0000, 28px 56px 0 #FF0000, 32px 56px 0 #FF0000, 36px 56px 0 #CC0000,
+
+    /* ===== ARMS WITH WHITE GLOVES ===== */
+    8px 48px 0 #CC0000, 12px 48px 0 #CC0000, 40px 48px 0 #CC0000, 44px 48px 0 #CC0000,
+    4px 52px 0 #FFFFFF, 8px 52px 0 #FFFFFF, 44px 52px 0 #FFFFFF, 48px 52px 0 #FFFFFF,
+    4px 56px 0 #FFFFFF, 8px 56px 0 #FFFFFF, 44px 56px 0 #FFFFFF, 48px 56px 0 #FFFFFF,
+
+    /* ===== BLACK PANTS ===== */
+    20px 60px 0 #000000, 24px 60px 0 #000000, 28px 60px 0 #000000, 32px 60px 0 #000000,
+    20px 64px 0 #000000, 24px 64px 0 #333333, 28px 64px 0 #333333, 32px 64px 0 #000000,
+    20px 68px 0 #000000, 32px 68px 0 #000000,
+
+    /* ===== SHINY SHOES ===== */
+    20px 72px 0 #000000, 24px 72px 0 #000000, 28px 72px 0 #000000, 32px 72px 0 #000000,
+    16px 72px 0 #000000, 36px 72px 0 #000000;
+
+  animation: walkerBobbing 0.65s steps(2) infinite;
+}
+
+/* ===== STRONGMAN (Muscles, Leopard Print, Barbell) ===== */
+.strongman-sprite-detailed {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== BARBELL (HELD OVERHEAD) ===== */
+    8px 8px 0 #666666, 12px 8px 0 #666666, 40px 8px 0 #666666, 44px 8px 0 #666666,
+    8px 12px 0 #666666, 12px 12px 0 #333333, 16px 12px 0 #999999, 20px 12px 0 #999999, 24px 12px 0 #999999, 28px 12px 0 #999999, 32px 12px 0 #999999, 36px 12px 0 #999999, 40px 12px 0 #333333, 44px 12px 0 #666666,
+    8px 16px 0 #666666, 12px 16px 0 #666666, 40px 16px 0 #666666, 44px 16px 0 #666666,
+
+    /* ===== HEAD WITH BANDANA ===== */
+    20px 20px 0 #FF0000, 24px 20px 0 #FF0000, 28px 20px 0 #FF0000, 32px 20px 0 #FF0000,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+    20px 28px 0 #FFE4C4, 24px 28px 0 #000000, 28px 28px 0 #FFE4C4, 32px 28px 0 #000000,
+    20px 32px 0 #FFE4C4, 24px 32px 0 #FFE4C4, 28px 32px 0 #FFE4C4, 32px 32px 0 #FFE4C4,
+    20px 36px 0 #FFE4C4, 24px 36px 0 #000000, 28px 36px 0 #000000, 32px 36px 0 #FFE4C4,
+
+    /* ===== MUSCULAR ARMS RAISED ===== */
+    8px 24px 0 #FFE4C4, 12px 24px 0 #FFE4C4, 16px 24px 0 #FFE4C4, 36px 24px 0 #FFE4C4, 40px 24px 0 #FFE4C4, 44px 24px 0 #FFE4C4,
+    4px 28px 0 #FFE4C4, 8px 28px 0 #D2B48C, 12px 28px 0 #D2B48C, 16px 28px 0 #FFE4C4, 36px 28px 0 #FFE4C4, 40px 28px 0 #D2B48C, 44px 28px 0 #D2B48C, 48px 28px 0 #FFE4C4,
+    4px 32px 0 #FFE4C4, 8px 32px 0 #FFE4C4, 12px 32px 0 #FFE4C4, 16px 32px 0 #FFE4C4, 36px 32px 0 #FFE4C4, 40px 32px 0 #FFE4C4, 44px 32px 0 #FFE4C4, 48px 32px 0 #FFE4C4,
+
+    /* ===== LEOPARD PRINT OUTFIT ===== */
+    16px 40px 0 #FFD700, 20px 40px 0 #FFAA00, 24px 40px 0 #000000, 28px 40px 0 #FFAA00, 32px 40px 0 #FFD700, 36px 40px 0 #FFD700,
+    12px 44px 0 #FFAA00, 16px 44px 0 #FFD700, 20px 44px 0 #FFD700, 24px 44px 0 #000000, 28px 44px 0 #FFD700, 32px 44px 0 #000000, 36px 44px 0 #FFAA00, 40px 44px 0 #FFAA00,
+    12px 48px 0 #FFD700, 16px 48px 0 #000000, 20px 48px 0 #FFAA00, 24px 48px 0 #FFAA00, 28px 48px 0 #FFD700, 32px 48px 0 #FFAA00, 36px 48px 0 #000000, 40px 48px 0 #FFD700,
+    16px 52px 0 #FFAA00, 20px 52px 0 #FFD700, 24px 52px 0 #000000, 28px 52px 0 #FFD700, 32px 52px 0 #FFAA00, 36px 52px 0 #FFAA00,
+
+    /* ===== MUSCULAR LEGS ===== */
+    16px 56px 0 #FFE4C4, 20px 56px 0 #FFE4C4, 24px 56px 0 #FFE4C4, 28px 56px 0 #FFE4C4, 32px 56px 0 #FFE4C4, 36px 56px 0 #FFE4C4,
+    16px 60px 0 #FFE4C4, 20px 60px 0 #D2B48C, 24px 60px 0 #FFE4C4, 28px 60px 0 #FFE4C4, 32px 60px 0 #D2B48C, 36px 60px 0 #FFE4C4,
+    20px 64px 0 #FFE4C4, 24px 64px 0 #FFE4C4, 28px 64px 0 #FFE4C4, 32px 64px 0 #FFE4C4,
+
+    /* ===== RED BOOTS ===== */
+    20px 68px 0 #CC0000, 24px 68px 0 #CC0000, 28px 68px 0 #CC0000, 32px 68px 0 #CC0000,
+    20px 72px 0 #CC0000, 24px 72px 0 #FF0000, 28px 72px 0 #FF0000, 32px 72px 0 #CC0000,
+    16px 72px 0 #CC0000, 36px 72px 0 #CC0000;
+
+  animation: walkerBobbing 0.55s steps(2) infinite;
+}
+
+/* ===== ACROBAT (Doing Handstand Walk) ===== */
+.acrobat-sprite-detailed {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== HANDS ON GROUND ===== */
+    20px 60px 0 #FFE4C4, 24px 60px 0 #FFE4C4, 28px 60px 0 #FFE4C4, 32px 60px 0 #FFE4C4,
+    20px 64px 0 #FFE4C4, 24px 64px 0 #D2B48C, 28px 64px 0 #D2B48C, 32px 64px 0 #FFE4C4,
+    16px 64px 0 #FFE4C4, 36px 64px 0 #FFE4C4,
+
+    /* ===== ARMS (VERTICAL) ===== */
+    20px 56px 0 #FFE4C4, 24px 56px 0 #00FF99, 28px 56px 0 #00FF99, 32px 56px 0 #FFE4C4,
+    20px 52px 0 #FFE4C4, 24px 52px 0 #00FF99, 28px 52px 0 #00FF99, 32px 52px 0 #FFE4C4,
+
+    /* ===== LEOTARD (TURQUOISE WITH SEQUINS) ===== */
+    16px 48px 0 #00FF99, 20px 48px 0 #00DDAA, 24px 48px 0 #FFD700, 28px 48px 0 #00DDAA, 32px 48px 0 #00DDAA, 36px 48px 0 #00FF99,
+    12px 44px 0 #00FF99, 16px 44px 0 #00DDAA, 20px 44px 0 #00DDAA, 24px 44px 0 #00DDAA, 28px 44px 0 #FFD700, 32px 44px 0 #00DDAA, 36px 44px 0 #00DDAA, 40px 44px 0 #00FF99,
+    12px 40px 0 #00FF99, 16px 40px 0 #00DDAA, 20px 40px 0 #FFD700, 24px 40px 0 #00DDAA, 28px 40px 0 #00DDAA, 32px 40px 0 #00DDAA, 36px 40px 0 #00DDAA, 40px 40px 0 #00FF99,
+    16px 36px 0 #00FF99, 20px 36px 0 #00DDAA, 24px 36px 0 #00DDAA, 28px 36px 0 #FFD700, 32px 36px 0 #00DDAA, 36px 36px 0 #00FF99,
+    16px 32px 0 #00FF99, 20px 32px 0 #00DDAA, 24px 32px 0 #00DDAA, 28px 32px 0 #00DDAA, 32px 32px 0 #00DDAA, 36px 32px 0 #00FF99,
+
+    /* ===== TORSO/SHOULDERS ===== */
+    20px 28px 0 #FFE4C4, 24px 28px 0 #FFE4C4, 28px 28px 0 #FFE4C4, 32px 28px 0 #FFE4C4,
+
+    /* ===== HEAD (UPSIDE DOWN) ===== */
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000,
+    20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4,
+
+    /* ===== PINK HAIR BOW ===== */
+    16px 12px 0 #FF69B4, 20px 12px 0 #FF1493, 24px 12px 0 #FF1493, 28px 12px 0 #FF1493, 32px 12px 0 #FF1493, 36px 12px 0 #FF69B4,
+    12px 8px 0 #FF69B4, 16px 8px 0 #FF1493, 20px 8px 0 #FF69B4, 24px 8px 0 #000000, 28px 8px 0 #FF69B4, 32px 8px 0 #FF1493, 36px 8px 0 #FF1493, 40px 8px 0 #FF69B4,
+
+    /* ===== LEGS IN AIR (SPLIT POSE) ===== */
+    8px 28px 0 #FFE4C4, 12px 28px 0 #FFE4C4, 40px 28px 0 #FFE4C4, 44px 28px 0 #FFE4C4,
+    4px 32px 0 #FFE4C4, 8px 32px 0 #00FF99, 44px 32px 0 #00FF99, 48px 32px 0 #FFE4C4,
+    0 36px 0 #FFE4C4, 4px 36px 0 #00FF99, 48px 36px 0 #00FF99, 52px 36px 0 #FFE4C4,
+
+    /* ===== POINTED TOES ===== */
+    0 40px 0 #FF69B4, 52px 40px 0 #FF69B4;
+
+  animation: walkerBobbing 0.5s steps(2) infinite;
+}
+
+@keyframes walkerBobbing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ===== TRAPEZE ARTIST (Sparkly Outfit, Graceful Pose) ===== */
+.trapeze-artist-sprite {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== FEATHERED HEADPIECE ===== */
+    16px 0 0 #FF00FF, 20px 0 0 #FF1493, 24px 0 0 #FF00FF, 28px 0 0 #FF1493, 32px 0 0 #FF00FF, 36px 0 0 #FF1493,
+    12px 4px 0 #FF00FF, 16px 4px 0 #FF69B4, 20px 4px 0 #FF1493, 24px 4px 0 #FF00FF, 28px 4px 0 #FF1493, 32px 4px 0 #FF69B4, 36px 4px 0 #FF00FF, 40px 4px 0 #FF00FF,
+    16px 8px 0 #FF69B4, 20px 8px 0 #FF00FF, 24px 8px 0 #FF69B4, 28px 8px 0 #FF00FF, 32px 8px 0 #FF69B4, 36px 8px 0 #FF00FF,
+
+    /* ===== FACE ===== */
+    20px 12px 0 #FFE4C4, 24px 12px 0 #FFE4C4, 28px 12px 0 #FFE4C4, 32px 12px 0 #FFE4C4,
+    20px 16px 0 #FFE4C4, 24px 16px 0 #000000, 28px 16px 0 #FFE4C4, 32px 16px 0 #000000,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #FF69B4, 28px 20px 0 #FF69B4, 32px 20px 0 #FFE4C4,
+
+    /* ===== SPARKLY BODYSUIT (Silver with Pink Stars) ===== */
+    20px 24px 0 #C0C0C0, 24px 24px 0 #C0C0C0, 28px 24px 0 #C0C0C0, 32px 24px 0 #C0C0C0,
+    16px 28px 0 #C0C0C0, 20px 28px 0 #E8E8E8, 24px 28px 0 #FF1493, 28px 28px 0 #E8E8E8, 32px 28px 0 #E8E8E8, 36px 28px 0 #C0C0C0,
+    12px 32px 0 #C0C0C0, 16px 32px 0 #E8E8E8, 20px 32px 0 #E8E8E8, 24px 32px 0 #E8E8E8, 28px 32px 0 #FF1493, 32px 32px 0 #E8E8E8, 36px 32px 0 #E8E8E8, 40px 32px 0 #C0C0C0,
+    12px 36px 0 #C0C0C0, 16px 36px 0 #E8E8E8, 20px 36px 0 #FF1493, 24px 36px 0 #E8E8E8, 28px 36px 0 #E8E8E8, 32px 36px 0 #E8E8E8, 36px 36px 0 #E8E8E8, 40px 36px 0 #C0C0C0,
+    16px 40px 0 #C0C0C0, 20px 40px 0 #E8E8E8, 24px 40px 0 #E8E8E8, 28px 40px 0 #FF1493, 32px 40px 0 #E8E8E8, 36px 40px 0 #C0C0C0,
+
+    /* ===== ARMS EXTENDED (GRACEFUL) ===== */
+    4px 24px 0 #FFE4C4, 8px 24px 0 #FFE4C4, 12px 24px 0 #FFE4C4, 40px 24px 0 #FFE4C4, 44px 24px 0 #FFE4C4, 48px 24px 0 #FFE4C4,
+    0 28px 0 #FFE4C4, 4px 28px 0 #C0C0C0, 8px 28px 0 #C0C0C0, 44px 28px 0 #C0C0C0, 48px 28px 0 #C0C0C0, 52px 28px 0 #FFE4C4,
+
+    /* ===== LEGS IN POINTED POSE ===== */
+    16px 44px 0 #C0C0C0, 20px 44px 0 #C0C0C0, 28px 44px 0 #C0C0C0, 32px 44px 0 #C0C0C0, 36px 44px 0 #C0C0C0,
+    12px 48px 0 #C0C0C0, 16px 48px 0 #E8E8E8, 20px 48px 0 #FFE4C4, 32px 48px 0 #FFE4C4, 36px 48px 0 #E8E8E8, 40px 48px 0 #C0C0C0,
+    8px 52px 0 #C0C0C0, 12px 52px 0 #E8E8E8, 16px 52px 0 #FFE4C4, 36px 52px 0 #FFE4C4, 40px 52px 0 #E8E8E8, 44px 52px 0 #C0C0C0,
+
+    /* ===== BALLET SHOES ===== */
+    12px 56px 0 #FF69B4, 16px 56px 0 #FF69B4, 36px 56px 0 #FF69B4, 40px 56px 0 #FF69B4,
+    8px 60px 0 #FF1493, 12px 60px 0 #FF69B4, 40px 60px 0 #FF69B4, 44px 60px 0 #FF1493;
+
+  animation: walkerBobbing 0.55s steps(2) infinite;
+}
+
+/* ===== CONTORTIONIST (Flexible Pose, Colorful Leotard) ===== */
+.contortionist-sprite {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== RAINBOW HEADBAND ===== */
+    20px 8px 0 #FF0000, 24px 8px 0 #FFFF00, 28px 8px 0 #00FF00, 32px 8px 0 #0066FF,
+    16px 12px 0 #FF6600, 20px 12px 0 #FF0000, 24px 12px 0 #FFFF00, 28px 12px 0 #00FF00, 32px 12px 0 #0066FF, 36px 12px 0 #9933FF,
+
+    /* ===== HEAD (BENT POSITION) ===== */
+    20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+
+    /* ===== RAINBOW STRIPED LEOTARD ===== */
+    20px 28px 0 #FF0000, 24px 28px 0 #FF6600, 28px 28px 0 #FFFF00, 32px 28px 0 #00FF00,
+    16px 32px 0 #FF0000, 20px 32px 0 #FF6600, 24px 32px 0 #FFFF00, 28px 32px 0 #00FF00, 32px 32px 0 #0066FF, 36px 32px 0 #9933FF,
+    16px 36px 0 #FF6600, 20px 36px 0 #FFFF00, 24px 36px 0 #00FF00, 28px 36px 0 #0066FF, 32px 36px 0 #9933FF, 36px 36px 0 #FF00FF,
+    20px 40px 0 #00FF00, 24px 40px 0 #0066FF, 28px 40px 0 #9933FF, 32px 40px 0 #FF00FF,
+    20px 44px 0 #0066FF, 24px 44px 0 #9933FF, 28px 44px 0 #FF00FF, 32px 44px 0 #FF1493,
+
+    /* ===== FLEXIBLE ARMS (CONTORTED) ===== */
+    8px 28px 0 #FFE4C4, 12px 28px 0 #FFE4C4, 40px 28px 0 #FFE4C4, 44px 28px 0 #FFE4C4,
+    4px 32px 0 #FFE4C4, 8px 32px 0 #FF0000, 44px 32px 0 #9933FF, 48px 32px 0 #FFE4C4,
+    4px 36px 0 #FFE4C4, 8px 36px 0 #FFE4C4, 44px 36px 0 #FFE4C4, 48px 36px 0 #FFE4C4,
+
+    /* ===== BENT LEGS ===== */
+    16px 48px 0 #9933FF, 20px 48px 0 #FF00FF, 28px 48px 0 #FFE4C4, 32px 48px 0 #FFE4C4, 36px 48px 0 #FFE4C4,
+    12px 52px 0 #FF00FF, 16px 52px 0 #FF1493, 24px 52px 0 #FFE4C4, 28px 52px 0 #FFE4C4, 32px 52px 0 #FFE4C4,
+    12px 56px 0 #FFE4C4, 16px 56px 0 #FFE4C4, 28px 56px 0 #FFE4C4, 32px 56px 0 #FFE4C4,
+
+    /* ===== BARE FEET ===== */
+    12px 60px 0 #FFE4C4, 16px 60px 0 #D2B48C, 28px 60px 0 #D2B48C, 32px 60px 0 #FFE4C4,
+    8px 60px 0 #FFE4C4, 36px 60px 0 #FFE4C4;
+
+  animation: walkerBobbing 0.7s steps(2) infinite;
+}
+
+/* ===== LION TAMER (Red Coat, Top Hat, Whip) ===== */
+.lion-tamer-sprite {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== BLACK TOP HAT ===== */
+    20px 0 0 #000000, 24px 0 0 #000000, 28px 0 0 #000000, 32px 0 0 #000000,
+    16px 4px 0 #000000, 20px 4px 0 #333333, 24px 4px 0 #333333, 28px 4px 0 #333333, 32px 4px 0 #333333, 36px 4px 0 #000000,
+    16px 8px 0 #000000, 20px 8px 0 #333333, 24px 8px 0 #333333, 28px 8px 0 #333333, 32px 8px 0 #333333, 36px 8px 0 #000000,
+    12px 12px 0 #000000, 16px 12px 0 #000000, 20px 12px 0 #000000, 24px 12px 0 #000000, 28px 12px 0 #000000, 32px 12px 0 #000000, 36px 12px 0 #000000, 40px 12px 0 #000000,
+
+    /* ===== FACE ===== */
+    20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 20px 0 #FFE4C4, 32px 20px 0 #000000,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+
+    /* ===== GOATEE ===== */
+    24px 28px 0 #000000, 28px 28px 0 #000000,
+    24px 32px 0 #000000, 28px 32px 0 #000000,
+
+    /* ===== RED MILITARY JACKET WITH GOLD ===== */
+    16px 36px 0 #CC0000, 20px 36px 0 #CC0000, 24px 36px 0 #FFD700, 28px 36px 0 #FFD700, 32px 36px 0 #CC0000, 36px 36px 0 #CC0000,
+    12px 40px 0 #CC0000, 16px 40px 0 #FF0000, 20px 40px 0 #FF0000, 24px 40px 0 #FFD700, 28px 40px 0 #FFD700, 32px 40px 0 #FF0000, 36px 40px 0 #FF0000, 40px 40px 0 #CC0000,
+    12px 44px 0 #CC0000, 16px 44px 0 #FF0000, 20px 44px 0 #FFD700, 24px 44px 0 #FF0000, 28px 44px 0 #FF0000, 32px 44px 0 #FFD700, 36px 44px 0 #FF0000, 40px 44px 0 #CC0000,
+    16px 48px 0 #CC0000, 20px 48px 0 #FF0000, 24px 48px 0 #FF0000, 28px 48px 0 #FF0000, 32px 48px 0 #FF0000, 36px 48px 0 #CC0000,
+
+    /* ===== WHIP IN RIGHT HAND ===== */
+    44px 36px 0 #8B4513, 48px 32px 0 #654321, 52px 28px 0 #654321, 56px 24px 0 #654321,
+    48px 36px 0 #654321, 52px 32px 0 #654321, 56px 28px 0 #654321,
+
+    /* ===== LEFT ARM ===== */
+    8px 40px 0 #CC0000, 12px 40px 0 #CC0000,
+    4px 44px 0 #FFE4C4, 8px 44px 0 #FFE4C4,
+
+    /* ===== WHITE PANTS ===== */
+    20px 52px 0 #FFFFFF, 24px 52px 0 #FFFFFF, 28px 52px 0 #FFFFFF, 32px 52px 0 #FFFFFF,
+    20px 56px 0 #FFFFFF, 24px 56px 0 #E8E8E8, 28px 56px 0 #E8E8E8, 32px 56px 0 #FFFFFF,
+    20px 60px 0 #FFFFFF, 32px 60px 0 #FFFFFF,
+
+    /* ===== BLACK BOOTS ===== */
+    20px 64px 0 #000000, 24px 64px 0 #000000, 28px 64px 0 #000000, 32px 64px 0 #000000,
+    20px 68px 0 #000000, 24px 68px 0 #333333, 28px 68px 0 #333333, 32px 68px 0 #000000,
+    16px 68px 0 #000000, 36px 68px 0 #000000;
+
+  animation: walkerBobbing 0.62s steps(2) infinite;
+}
+
+/* ===== ELEPHANT TRAINER (With Mini Elephant) ===== */
+.elephant-trainer-sprite {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== TRAINER - SAFARI HAT ===== */
+    52px 4px 0 #D2B48C, 56px 4px 0 #D2B48C, 60px 4px 0 #D2B48C, 64px 4px 0 #D2B48C,
+    48px 8px 0 #D2B48C, 52px 8px 0 #C9A76C, 56px 8px 0 #C9A76C, 60px 8px 0 #C9A76C, 64px 8px 0 #C9A76C, 68px 8px 0 #D2B48C,
+
+    /* ===== TRAINER - FACE ===== */
+    52px 12px 0 #FFE4C4, 56px 12px 0 #FFE4C4, 60px 12px 0 #FFE4C4, 64px 12px 0 #FFE4C4,
+    52px 16px 0 #FFE4C4, 56px 16px 0 #000000, 60px 16px 0 #FFE4C4, 64px 16px 0 #000000,
+    52px 20px 0 #FFE4C4, 56px 20px 0 #FFE4C4, 60px 20px 0 #FFE4C4, 64px 20px 0 #FFE4C4,
+
+    /* ===== TRAINER - KHAKI VEST ===== */
+    52px 24px 0 #C9A76C, 56px 24px 0 #C9A76C, 60px 24px 0 #C9A76C, 64px 24px 0 #C9A76C,
+    48px 28px 0 #C9A76C, 52px 28px 0 #D2B48C, 56px 28px 0 #8B4513, 60px 28px 0 #D2B48C, 64px 28px 0 #D2B48C, 68px 28px 0 #C9A76C,
+    48px 32px 0 #C9A76C, 52px 32px 0 #D2B48C, 56px 32px 0 #D2B48C, 60px 32px 0 #8B4513, 64px 32px 0 #D2B48C, 68px 32px 0 #C9A76C,
+    52px 36px 0 #C9A76C, 56px 36px 0 #D2B48C, 60px 36px 0 #D2B48C, 64px 36px 0 #C9A76C,
+
+    /* ===== TRAINER - ARMS ===== */
+    44px 28px 0 #FFE4C4, 48px 28px 0 #C9A76C, 68px 28px 0 #C9A76C, 72px 28px 0 #FFE4C4,
+    40px 32px 0 #FFE4C4, 44px 32px 0 #FFE4C4, 72px 32px 0 #FFE4C4, 76px 32px 0 #FFE4C4,
+
+    /* ===== TRAINER - PANTS & BOOTS ===== */
+    52px 40px 0 #8B4513, 56px 40px 0 #8B4513, 60px 40px 0 #8B4513, 64px 40px 0 #8B4513,
+    52px 44px 0 #8B4513, 56px 44px 0 #654321, 60px 60px 0 #654321, 64px 44px 0 #8B4513,
+    52px 48px 0 #000000, 56px 48px 0 #000000, 60px 48px 0 #000000, 64px 48px 0 #000000,
+    52px 52px 0 #000000, 56px 52px 0 #333333, 60px 52px 0 #333333, 64px 52px 0 #000000,
+
+    /* ===== BABY ELEPHANT ===== */
+    12px 32px 0 #999999, 16px 32px 0 #999999, 20px 32px 0 #999999,
+    8px 36px 0 #999999, 12px 36px 0 #AAAAAA, 16px 36px 0 #AAAAAA, 20px 36px 0 #AAAAAA, 24px 36px 0 #999999,
+    8px 40px 0 #999999, 12px 40px 0 #AAAAAA, 16px 40px 0 #AAAAAA, 20px 40px 0 #AAAAAA, 24px 40px 0 #999999,
+    12px 44px 0 #999999, 16px 44px 0 #AAAAAA, 20px 44px 0 #999999,
+    /* Trunk */
+    24px 40px 0 #999999, 28px 40px 0 #999999, 28px 44px 0 #AAAAAA,
+    /* Legs */
+    12px 48px 0 #999999, 16px 48px 0 #999999, 20px 48px 0 #999999,
+    12px 52px 0 #999999, 16px 52px 0 #999999, 20px 52px 0 #999999,
+    12px 56px 0 #666666, 16px 56px 0 #666666, 20px 56px 0 #666666;
+
+  animation: walkerBobbing 0.68s steps(2) infinite;
+}
+
+/* ===== MAGICIAN (Top Hat, Cape, Magic Wand) ===== */
+.magician-sprite {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow:
+    /* ===== TALL MAGIC HAT WITH STAR ===== */
+    20px 0 0 #000000, 24px 0 0 #000000, 28px 0 0 #000000, 32px 0 0 #000000,
+    16px 4px 0 #000000, 20px 4px 0 #333333, 24px 4px 0 #FFD700, 28px 4px 0 #333333, 32px 4px 0 #333333, 36px 4px 0 #000000,
+    16px 8px 0 #000000, 20px 8px 0 #333333, 24px 8px 0 #333333, 28px 8px 0 #333333, 32px 8px 0 #333333, 36px 8px 0 #000000,
+    12px 12px 0 #000000, 16px 12px 0 #000000, 20px 12px 0 #000000, 24px 12px 0 #000000, 28px 12px 0 #000000, 32px 12px 0 #000000, 36px 12px 0 #000000, 40px 12px 0 #000000,
+
+    /* ===== FACE WITH THIN MUSTACHE ===== */
+    20px 16px 0 #FFE4C4, 24px 16px 0 #FFE4C4, 28px 16px 0 #FFE4C4, 32px 16px 0 #FFE4C4,
+    20px 20px 0 #FFE4C4, 24px 20px 0 #000000, 28px 28px 0 #FFE4C4, 32px 20px 0 #000000,
+    20px 24px 0 #FFE4C4, 24px 24px 0 #FFE4C4, 28px 24px 0 #FFE4C4, 32px 24px 0 #FFE4C4,
+    16px 28px 0 #000000, 20px 28px 0 #000000, 24px 28px 0 #FFE4C4, 28px 28px 0 #FFE4C4, 32px 28px 0 #000000, 36px 28px 0 #000000,
+
+    /* ===== BOW TIE ===== */
+    20px 32px 0 #FF0000, 24px 32px 0 #FF0000, 28px 32px 0 #FF0000, 32px 32px 0 #FF0000,
+
+    /* ===== BLACK TUXEDO ===== */
+    20px 36px 0 #000000, 24px 36px 0 #FFFFFF, 28px 36px 0 #FFFFFF, 32px 36px 0 #000000,
+    16px 40px 0 #000000, 20px 40px 0 #000000, 24px 40px 0 #FFFFFF, 28px 40px 0 #FFFFFF, 32px 40px 0 #000000, 36px 40px 0 #000000,
+    16px 44px 0 #000000, 20px 44px 0 #000000, 24px 44px 0 #000000, 28px 44px 0 #000000, 32px 44px 0 #000000, 36px 44px 0 #000000,
+    20px 48px 0 #000000, 24px 48px 0 #000000, 28px 48px 0 #000000, 32px 48px 0 #000000,
+
+    /* ===== PURPLE CAPE ===== */
+    8px 40px 0 #9933FF, 12px 40px 0 #9933FF, 40px 40px 0 #9933FF, 44px 40px 0 #9933FF,
+    4px 44px 0 #9933FF, 8px 44px 0 #CC66FF, 12px 44px 0 #CC66FF, 40px 44px 0 #CC66FF, 44px 44px 0 #CC66FF, 48px 44px 0 #9933FF,
+    4px 48px 0 #9933FF, 8px 48px 0 #CC66FF, 12px 48px 0 #CC66FF, 16px 48px 0 #9933FF, 36px 48px 0 #9933FF, 40px 48px 0 #CC66FF, 44px 48px 0 #CC66FF, 48px 48px 0 #9933FF,
+    8px 52px 0 #9933FF, 12px 52px 0 #9933FF, 40px 52px 0 #9933FF, 44px 52px 0 #9933FF,
+
+    /* ===== MAGIC WAND (WHITE with GOLD STAR) ===== */
+    44px 24px 0 #FFD700, 48px 24px 0 #FFD700,
+    44px 28px 0 #FFFFFF, 48px 28px 0 #FFD700, 52px 28px 0 #FFD700,
+    44px 32px 0 #FFFFFF, 48px 32px 0 #FFFFFF,
+    44px 36px 0 #FFFFFF,
+
+    /* ===== PANTS & SHOES ===== */
+    20px 52px 0 #000000, 24px 52px 0 #000000, 28px 52px 0 #000000, 32px 52px 0 #000000,
+    20px 56px 0 #000000, 24px 56px 0 #333333, 28px 56px 0 #333333, 32px 56px 0 #000000,
+    20px 60px 0 #000000, 32px 60px 0 #000000,
+    20px 64px 0 #000000, 24px 64px 0 #000000, 28px 64px 0 #000000, 32px 64px 0 #000000,
+    16px 64px 0 #000000, 36px 64px 0 #000000;
+
+  animation: walkerBobbing 0.58s steps(2) infinite;
+}
+
+/* Unique character animations */
+@keyframes juggleBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@keyframes ringmasterStrut {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(3deg);
+  }
+}
+
+@keyframes strongmanFlex {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  30% {
+    transform: translateY(-3px) scaleY(1.05);
+  }
+  50% {
+    transform: translateY(-5px) scaleY(1.08) scaleX(0.98);
+  }
+  70% {
+    transform: translateY(-3px) scaleY(1.05);
+  }
+}
+
+@keyframes acrobatFlip {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg) scaleX(1.05);
+  }
+}
+
+/* ==================== FIRE HOOP (PIXEL ART) ==================== */
+
+/* Pixel Art Hoop Ring using box-shadow */
+.hoop-ring {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 12px;
+  left: 8px;
+  box-shadow:
+    /* Top flame */
+    24px -12px 0 #FFFF00, 24px -8px 0 #FF8800, 24px -4px 0 #FF0000,
+    /* Ring - top arc */
+    12px 0 0 #FFD700, 16px 0 0 #FFD700, 20px 0 0 #FFD700, 24px 0 0 #FFD700, 28px 0 0 #FFD700, 32px 0 0 #FFD700, 36px 0 0 #FFD700,
+    8px 4px 0 #FFD700, 40px 4px 0 #FFD700,
+    /* Left side */
+    4px 8px 0 #FFD700, 44px 8px 0 #FFD700,
+    /* Left flame */
+    0 12px 0 #FFFF00, 4px 12px 0 #FFD700, 44px 12px 0 #FFD700, 48px 12px 0 #FFFF00,
+    -4px 16px 0 #FF8800, 0 16px 0 #FFD700, 4px 16px 0 #FFD700, 44px 16px 0 #FFD700, 48px 16px 0 #FFD700, 52px 16px 0 #FF8800,
+    -4px 20px 0 #FF0000, 0 20px 0 #FFD700, 4px 20px 0 #FFD700, 44px 20px 0 #FFD700, 48px 20px 0 #FFD700, 52px 20px 0 #FF0000,
+    /* Middle */
+    0 24px 0 #FFD700, 4px 24px 0 #FFD700, 44px 24px 0 #FFD700, 48px 24px 0 #FFD700,
+    /* Bottom flames */
+    8px 28px 0 #FFFF00, 0 28px 0 #FFD700, 4px 28px 0 #FFD700, 44px 28px 0 #FFD700, 48px 28px 0 #FFD700, 40px 28px 0 #FFFF00,
+    8px 32px 0 #FF8800, 0 32px 0 #FFD700, 4px 32px 0 #FFD700, 44px 32px 0 #FFD700, 48px 32px 0 #FFD700, 40px 32px 0 #FF8800,
+    8px 36px 0 #FF0000, 0 36px 0 #FFD700, 4px 36px 0 #FFD700, 44px 36px 0 #FFD700, 48px 36px 0 #FFD700, 40px 36px 0 #FF0000,
+    /* Bottom arc */
+    4px 40px 0 #FFD700, 44px 40px 0 #FFD700,
+    8px 44px 0 #FFD700, 40px 44px 0 #FFD700,
+    12px 48px 0 #FFD700, 16px 48px 0 #FFD700, 20px 48px 0 #FFD700, 24px 48px 0 #FFD700, 28px 48px 0 #FFD700, 32px 48px 0 #FFD700, 36px 48px 0 #FFD700,
+    /* Bottom flame */
+    24px 52px 0 #FFFF00, 24px 56px 0 #FF8800, 24px 60px 0 #FF0000;
+  animation: flameFlicker 0.4s steps(2) infinite;
+}
+
+.hoop-inner,
+.fire-flames,
+.fire-flames .flame {
+  display: none;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Floating Balloons */
+.pixel-balloon {
+  position: absolute;
+  bottom: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatUp 10s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: -60px;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(15px) rotate(3deg);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 110vh;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.balloon-body {
+  width: 20px;
+  height: 24px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow:
+    inset -3px -3px 0 rgba(255, 255, 255, 0.2),
+    1px 1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.balloon-body::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid inherit;
+}
+
+.balloon-string {
+  width: 2px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    0deg,
+    #FFFFFF 0px,
+    #FFFFFF 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.6;
+}
+
+/* Balloon Colors */
+.balloon-body.color-0 { background: #FF0000; }
+.balloon-body.color-1 { background: #FFFF00; }
+.balloon-body.color-2 { background: #00FF00; }
+.balloon-body.color-3 { background: #00FFFF; }
+
+/* Twinkling Stars */
+.pixel-star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FFFF00;
+  box-shadow: 0 0 4px #FFFF00;
+  animation: starTwinkle 3s ease-in-out infinite;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+/* Confetti */
+.pixel-confetti {
+  position: absolute;
+  top: -20px;
+  animation: confettiFall 5s linear infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -20px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 110vh;
+    transform: rotate(720deg);
+  }
+}
+
+.confetti-piece {
+  width: 8px;
+  height: 8px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.confetti-piece.color-0 { background: #FF0000; }
+.confetti-piece.color-1 { background: #FFFF00; }
+.confetti-piece.color-2 { background: #00FF00; }
+.confetti-piece.color-3 { background: #FF00FF; }
+
+/* Simple Pixel Circus Tent Background */
+.circus-tent-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 280px;
+  z-index: 2;
+  opacity: 0.08;
+}
+
+.circus-tent-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid #FF0000;
+}
+
+.circus-tent-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 80px;
+  background: #FFD700;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+
+.menu-main {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 5vh, 4rem);
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ==================== TITLE ==================== */
+
+.game-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title-text {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #FFFFFF;
+  text-shadow:
+    4px 4px 0 #FF0000,
+    8px 8px 0 #000000;
+  letter-spacing: 0.15em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle-text {
+  font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+  color: #FFD700;
+  text-shadow: 2px 2px 0 #000000;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+/* ==================== MENU OPTIONS ==================== */
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.6);
+  border: 4px solid #FFFFFF;
+  cursor: pointer;
+  transition: all 150ms ease;
+  letter-spacing: 0.15em;
+  min-height: 60px;
+}
+
+.menu-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFD700;
+  transform: scale(1.05);
+}
+
+.menu-option.active {
+  background: #FFD700;
+  color: #000000;
+  border-color: #FFD700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.arrow {
+  font-size: 1.2em;
+  animation: arrowBlink 600ms steps(2) infinite;
+}
+
+@keyframes arrowBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ==================== PRESS START ==================== */
+
+.press-start-container {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.press-start-text {
+  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0 #FF0000;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+/* ==================== COPYRIGHT ==================== */
+
+.copyright-text {
+  font-size: clamp(0.4rem, 0.8vw, 0.5rem);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-height: 700px) {
+  .menu-main {
+    gap: 1.5rem;
+  }
+
+  .game-title {
+    gap: 0.5rem;
+  }
+
+  .menu-list {
+    gap: 1rem;
+  }
+
+  .menu-option {
+    padding: 0.75rem 1.5rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-text {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    text-shadow:
+      3px 3px 0 #FF0000,
+      6px 6px 0 #000000;
+  }
+
+  .menu-option {
+    font-size: clamp(0.7rem, 3vw, 1rem);
+  }
+
+  .circus-tent-bg {
+    width: 400px;
+    height: 200px;
+  }
+
+  .circus-tent-bg::before {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 150px solid #FF0000;
+  }
+
+  /* Hide circus scene on tablets */
+  .circus-charlie-scene-full {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-main {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .menu-option {
+    padding: 0.6rem 1rem;
+    min-height: 45px;
+    font-size: clamp(0.6rem, 4vw, 0.9rem);
+  }
+
+  .circus-tent-bg {
+    width: 300px;
+    height: 150px;
+  }
+
+  .circus-tent-bg::before {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid #FF0000;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.menu-option:focus,
+.sega-menu:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 4px;
+}
