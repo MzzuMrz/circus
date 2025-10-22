@@ -50,54 +50,53 @@ export const Menu: React.FC<MenuProps> = ({ onStart, onInfo }) => {
         <div className="circus-charlie-scene-full">
           {/* Fire Hoops - Left and Right Sides Only */}
           <div className="fire-hoop hoop-left">
-            <div className="hoop-ring"></div>
           </div>
 
           <div className="fire-hoop hoop-right">
-            <div className="hoop-ring"></div>
           </div>
 
-          {/* Single Elegant Clown Rider */}
-          <div className="clown-bike">
-            <div className="clown-sprite-red"></div>
+          {/* Original Clown Convoy - Three Clown Friends in Line */}
+          <div className="clown-bike clown-leader">
+            <div className="clown-sprite"></div>
           </div>
+
+          <div className="clown-bike clown-follower-1">
+            <div className="clown-sprite-blue"></div>
+          </div>
+
+          <div className="clown-bike clown-follower-2">
+            <div className="clown-sprite-green"></div>
+          </div>
+
+          {/* Circus Props and Accessories */}
+          <div className="circus-prop prop-ball-1"></div>
+          <div className="circus-prop prop-ball-2"></div>
+          <div className="circus-prop prop-ring-1"></div>
+          <div className="circus-prop prop-ring-2"></div>
+          <div className="circus-sparkles sparkle-1"></div>
+          <div className="circus-sparkles sparkle-2"></div>
+          <div className="circus-sparkles sparkle-3"></div>
+
 
           {/* Platform/Ground */}
           <div className="circus-platform-full"></div>
         </div>
 
-        {/* Subtle Floating Balloons */}
-        {[...Array(2)].map((_, i) => (
-          <div
-            key={`balloon-${i}`}
-            className="pixel-balloon"
-            style={{
-              left: `${30 + i * 40}%`,
-              animationDelay: `${i * 2}s`,
-              animationDuration: `${8 + i}s`
-            }}
-          >
-            <div className={`balloon-body color-${i % 4}`}></div>
-            <div className="balloon-string"></div>
-          </div>
-        ))}
+        {/* Pixel Art Balloons */}
+        <div className="pixel-balloon balloon-red" style={{ left: '20%', animationDelay: '0s' }}>
+          <div className="balloon-sprite red-balloon"></div>
+        </div>
 
-        {/* Subtle Stars */}
-        {[...Array(4)].map((_, i) => (
-          <div
-            key={`star-${i}`}
-            className="pixel-star"
-            style={{
-              left: `${15 + i * 25}%`,
-              top: `${10 + i * 10}%`,
-              animationDelay: `${i * 0.5}s`
-            }}
-          />
-        ))}
+        <div className="pixel-balloon balloon-blue" style={{ left: '70%', animationDelay: '3s' }}>
+          <div className="balloon-sprite blue-balloon"></div>
+        </div>
+
+        <div className="pixel-balloon balloon-yellow" style={{ left: '45%', animationDelay: '6s' }}>
+          <div className="balloon-sprite yellow-balloon"></div>
+        </div>
+
       </div>
 
-      {/* Pixel Circus Tent */}
-      <div className="circus-tent-bg"></div>
 
       {/* Main Content */}
       <div className="menu-main">
