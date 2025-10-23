@@ -8,7 +8,6 @@ interface StakingRaffleProps {
 type EpochStatus = 'Active' | 'Ended' | 'Completed';
 
 export const StakingRaffle: React.FC<StakingRaffleProps> = ({ onBack }) => {
-  const [blinkOn, setBlinkOn] = useState(true);
   const [ticketsToBuy, setTicketsToBuy] = useState(1);
 
   // Modal states
@@ -47,12 +46,6 @@ export const StakingRaffle: React.FC<StakingRaffleProps> = ({ onBack }) => {
   const TICKET_PRICE = 1; // 1 SOL per ticket
   const PROTOCOL_FEE = 0.03; // 3% fee
 
-  useEffect(() => {
-    const blinkInterval = setInterval(() => {
-      setBlinkOn(prev => !prev);
-    }, 500);
-    return () => clearInterval(blinkInterval);
-  }, []);
 
   // Countdown animation (mock)
   useEffect(() => {
